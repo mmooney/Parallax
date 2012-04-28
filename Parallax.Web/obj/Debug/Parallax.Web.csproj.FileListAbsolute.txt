@@ -1,0 +1,5 @@
+C:\Projects\git\Parallax\Parallax.Web\bin\Parallax.Web.dll
+C:\Projects\git\Parallax\Parallax.Web\bin\Parallax.Web.pdb
+C:\Projects\git\Parallax\Parallax.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\git\Parallax\Parallax.Web\obj\Debug\Parallax.Web.dll
+C:\Projects\git\Parallax\Parallax.Web\obj\Debug\Parallax.Web.pdb

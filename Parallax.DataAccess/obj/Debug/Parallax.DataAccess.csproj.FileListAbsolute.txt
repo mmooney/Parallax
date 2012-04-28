@@ -1,0 +1,5 @@
+C:\Projects\git\Parallax\Parallax.DataAccess\bin\Debug\Parallax.DataAccess.dll
+C:\Projects\git\Parallax\Parallax.DataAccess\bin\Debug\Parallax.DataAccess.pdb
+C:\Projects\git\Parallax\Parallax.DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Projects\git\Parallax\Parallax.DataAccess\obj\Debug\Parallax.DataAccess.dll
+C:\Projects\git\Parallax\Parallax.DataAccess\obj\Debug\Parallax.DataAccess.pdb
