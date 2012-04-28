@@ -14,7 +14,7 @@ namespace Parallax.DataAccess
 			var documentStore = new DocumentStore 
 			{	
 				Url = "http://localhost:8080/", 
-				DefaultDatabase = "Parallax" 
+				//DefaultDatabase = "Parallax" 
 			};
 			documentStore.Initialize();
 			return documentStore;

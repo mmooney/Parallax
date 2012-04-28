@@ -56,6 +56,7 @@ namespace Parallax.Web
 			Container.Register(AllTypes
 				.FromAssembly(Assembly.GetExecutingAssembly())
 				.BasedOn<IController>()
+				.LifestyleTransient()
 				//.Configure(c => c.LifeStyle.Transient)
 			);
 
