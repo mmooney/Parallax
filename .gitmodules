@@ -1,0 +1,3 @@
+[submodule "submodules/RavenDBMembership"]
+	path = submodules/RavenDBMembership
+	url = git@github.com:mmooney/RavenDBMembership.git
