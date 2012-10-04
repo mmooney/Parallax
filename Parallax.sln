@@ -18,6 +18,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RavenDBMembership", "submodules\RavenDBMembership\src\RavenDBMembership\RavenDBMembership.csproj", "{07CCE5B6-9111-46DC-AAEC-00D80E19FE4A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallax.Data.Base", "Parallax.Data.Base\Parallax.Data.Base.csproj", "{619C9BF6-B9AD-4C07-A873-C8EE6047E935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parallax.Data.Tasks", "Parallax.Data.Tasks\Parallax.Data.Tasks.csproj", "{512E2E7D-3AF0-42AB-9CB1-5AEF36BE159E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,14 @@ Global
 		{07CCE5B6-9111-46DC-AAEC-00D80E19FE4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07CCE5B6-9111-46DC-AAEC-00D80E19FE4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07CCE5B6-9111-46DC-AAEC-00D80E19FE4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619C9BF6-B9AD-4C07-A873-C8EE6047E935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619C9BF6-B9AD-4C07-A873-C8EE6047E935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619C9BF6-B9AD-4C07-A873-C8EE6047E935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619C9BF6-B9AD-4C07-A873-C8EE6047E935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512E2E7D-3AF0-42AB-9CB1-5AEF36BE159E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512E2E7D-3AF0-42AB-9CB1-5AEF36BE159E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512E2E7D-3AF0-42AB-9CB1-5AEF36BE159E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512E2E7D-3AF0-42AB-9CB1-5AEF36BE159E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
