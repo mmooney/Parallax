@@ -5,8 +5,8 @@ using System.Text;
 
 namespace Parallax.Data.Base
 {
-	public class ParallaxUser : BaseEntity
+	public class ParallaxUser
 	{
-		public string MembershipId { get; set; }
+		public string UserName { get; set; }
 	}
 }

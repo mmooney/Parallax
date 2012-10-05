@@ -11,6 +11,7 @@ using RavenDBMembership.Web.Infrastructure;
 using System.Reflection;
 using Parallax.DataAccess;
 using Microsoft.Practices.ServiceLocation;
+using Castle.Windsor.Installer;
 
 namespace Parallax.Web
 {
@@ -19,7 +20,7 @@ namespace Parallax.Web
 
 	public class MvcApplication : System.Web.HttpApplication
 	{
-		public static IWindsorContainer Container;
+		private static IWindsorContainer Container { get; set; }
 
 		public static void RegisterGlobalFilters(GlobalFilterCollection filters)
 		{
@@ -29,6 +30,7 @@ namespace Parallax.Web
 		public static void RegisterRoutes(RouteCollection routes)
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+			routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
 
 			routes.MapRoute(
 				"Default", // Route name
@@ -38,27 +40,35 @@ namespace Parallax.Web
 
 		}
 
+		private static void BootstrapContainer()
+		{
+			MvcApplication.Container = new WindsorContainer().Install(FromAssembly.This());
+			var controllerFactory = new WindsorControllerFactory(MvcApplication.Container.Kernel);
+			ControllerBuilder.Current.SetControllerFactory(controllerFactory);
+		}
+
 		protected void Application_Start()
 		{
-			Container = new WindsorContainer();
+			MvcApplication.BootstrapContainer();
+			//Container = new WindsorContainer();
 
-			// Common Service Locator
-			ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(Container));
+			//// Common Service Locator
+			//ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(Container));
 
-			// RavenDB embedded
-			Container.Register(Component
-				.For<IDocumentStore>()
-				.UsingFactoryMethod(() => DataHelper.GetDocumentStore())
-				.LifeStyle.Singleton);
+			//// RavenDB embedded
+			//Container.Register(Component
+			//    .For<IDocumentStore>()
+			//    .UsingFactoryMethod(() => DataHelper.GetDocumentStore())
+			//    .LifeStyle.Singleton);
 
-			// MVC components
-			ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container));
-			Container.Register(AllTypes
-				.FromAssembly(Assembly.GetExecutingAssembly())
-				.BasedOn<IController>()
-				.LifestyleTransient()
-				//.Configure(c => c.LifeStyle.Transient)
-			);
+			//// MVC components
+			//ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(Container));
+			//Container.Register(AllTypes
+			//    .FromAssembly(Assembly.GetExecutingAssembly())
+			//    .BasedOn<IController>()
+			//    .LifestyleTransient()
+			//    //.Configure(c => c.LifeStyle.Transient)
+			//);
 
 			AreaRegistration.RegisterAllAreas();
 
@@ -68,8 +78,8 @@ namespace Parallax.Web
 
 		protected void Application_End()
 		{
-			var documentStore = Container.Resolve<IDocumentStore>();
-			documentStore.Dispose();
+			//var documentStore = Container.Resolve<IDocumentStore>();
+			//documentStore.Dispose();
 			Container.Dispose();
 		}
 

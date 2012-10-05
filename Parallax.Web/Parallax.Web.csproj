@@ -94,12 +94,15 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\WindsorControllerFactory.cs" />
     <Compile Include="Infrastructure\WindsorServiceLocator.cs" />
+    <Compile Include="Installers\ControllerInstallers.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Plumbing\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +180,14 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Parallax.Data.Base\Parallax.Data.Base.csproj">
+      <Project>{619C9BF6-B9AD-4C07-A873-C8EE6047E935}</Project>
+      <Name>Parallax.Data.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parallax.Data.Tasks\Parallax.Data.Tasks.csproj">
+      <Project>{512E2E7D-3AF0-42AB-9CB1-5AEF36BE159E}</Project>
+      <Name>Parallax.Data.Tasks</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Parallax.DataAccess\Parallax.DataAccess.csproj">
       <Project>{F88CDE44-84F6-47DC-B3CE-AB097C751888}</Project>
       <Name>Parallax.DataAccess</Name>
@@ -185,6 +196,12 @@
       <Project>{07CCE5B6-9111-46DC-AAEC-00D80E19FE4A}</Project>
       <Name>RavenDBMembership</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Project\Create.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
