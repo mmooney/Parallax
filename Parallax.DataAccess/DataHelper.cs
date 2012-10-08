@@ -14,6 +14,10 @@ namespace Parallax.DataAccess
 			var documentStore = new DocumentStore 
 			{	
 				Url = "http://localhost:8080/", 
+				Conventions = new DocumentConvention
+				{
+					IdentityPartsSeparator = "-"
+				}
 				//DefaultDatabase = "Parallax" 
 			};
 			documentStore.Initialize();

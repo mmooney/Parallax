@@ -20,5 +20,10 @@ namespace Parallax.DataAccess
 		{
 			return this.DocumentSession.Query<T>().Skip(pageSize * (pageIndex)).Take(pageSize);
 		}
+
+		public T LoadItem<T>(string id)
+		{
+			return this.DocumentSession.Load<T>(id);
+		}
 	}
 }

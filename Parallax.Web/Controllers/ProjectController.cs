@@ -31,9 +31,10 @@ namespace Parallax.Web.Controllers
         //
         // GET: /Project/Details/5
 
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
-            return View();
+			var project = this.EntityLoader.LoadItem<Project>(id);
+            return View(project);
         }
 
         //

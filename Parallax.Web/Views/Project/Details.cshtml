@@ -1,0 +1,38 @@
+﻿@model Parallax.Data.Tasks.Project
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Project</legend>
+
+    <div class="display-label">ProjectName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProjectName)
+    </div>
+
+    <div class="display-label">Created</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreatedDate) 
+		@if(Model.CreatedByUser != null)
+		{
+			<text> by @Model.CreatedByUser.UserName</text>
+		}
+    </div>
+
+    <div class="display-label">ModifiedDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModifiedDate)
+		@if(Model.ModifiedByUser != null)
+		{
+			<text> by @Model.ModifiedByUser.UserName</text>
+		}
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

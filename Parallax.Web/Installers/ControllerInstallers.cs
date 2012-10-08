@@ -7,6 +7,8 @@ using Parallax.DataAccess;
 using Parallax.Data.Base;
 using System.Web.Security;
 using System.Web;
+using Microsoft.Practices.ServiceLocation;
+using RavenDBMembership.Web.Infrastructure;
 
 namespace Parallax.Web.Installers
 {
@@ -30,6 +32,9 @@ namespace Parallax.Web.Installers
 			container.Register(Component.For<ParallaxSession>()
 									.UsingFactoryMethod(()=>new ParallaxSession(GetCurrentUser()))
 									.LifeStyle.PerWebRequest);
+
+			// Common Service Locator for RavenDBMembershipProvider
+			ServiceLocator.SetLocatorProvider(() => new WindsorServiceLocator(container));
 		}
 
 		private ParallaxUser GetCurrentUser()
